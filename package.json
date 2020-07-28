@@ -4,12 +4,17 @@
   "description": "Shortly URL shortening API Challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-watch": "sass --watch scss/style.scss css/style.css"
   },
   "author": "Marina Zujic",
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^4.5.0",
-    "jquery": "^3.5.1"
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  },
+  "devDependencies": {
+    "sass": "^1.26.10"
   }
 }
