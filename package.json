@@ -1,0 +1,15 @@
+{
+  "name": "url-shortening-api-master",
+  "version": "1.0.0",
+  "description": "Shortly URL shortening API Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marina Zujic",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "jquery": "^3.5.1"
+  }
+}
