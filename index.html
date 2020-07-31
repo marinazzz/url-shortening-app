@@ -35,33 +35,43 @@
         </div>
     </nav>
   </header>
-  <main>
-    <section class="hero">
-      <div class="content-centered">
-        <div class="section-hero__image">
+  <main class="text-xs-center">
+    <section class="hero pt-4">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="hero__img col-sm order-md-2">
+          </div>
+          <div class="col-sm order-md-1">
+            <h1 class="display-4">More than just shorter links</h1>
+            <p>Build your brand’s recognition and get detailed insights
+              on how your links are performing.
+            </p>
+              <button class="btn btn-lg rounded-pill my-2 my-sm-0">
+                Get Started</button>
+          </div>
         </div>
-        <div class="section-hero__description">
-          <h1 class="display-2">More than just shorter links</h1>
-          <p class="lead">Build your brand’s recognition and get detailed insights
-            on how your links are performing.
-          </p>
-            <button class="primary-button">
-              Get Started</button>
-      </div>
       </div>
     </section>
     <section class="features">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Shorten a link here..." aria-label="Search">
-        <button class="btn btn-success my-2 my-sm-0" type="submit">Shorten It!</button>
-      </form>
-      <div class="links row">
-        <div class="col1">
-          <a href="" class="searched-link">Link</a>
-        </div>
-        <div class="col2">
-          <a href="" class="short-link">Short link</a>
-          <button class="btn btn-success my-2 my-sm-0" type="button">Copy</button>
+      <div class="container">
+        <form class="form-row justify-content-center">
+          <div class="col">
+            <input class="form-control mr-sm-2" type="search" placeholder="Shorten a link here..." aria-label="Search">
+          </div>
+          <div class="col">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">Shorten It!</button>
+          </div>
+        </form>
+      </div>
+      <div class="container">
+        <div class="links row">
+          <div class="col">
+            <a href="" class="searched-link">Link</a>
+          </div>
+          <div class="col">
+            <a href="" class="short-link">Short link</a>
+            <button class="btn btn-success my-2 my-sm-0" type="button">Copy</button>
+          </div>
         </div>
       </div>
       <div class="features-items">
@@ -100,36 +110,34 @@
         </div>
       </div>
     </section>
-    <section class="cta">
+    <section class="container cta">
       <h2>Boost your links today</h2>
       <button class="primary-button">
         Get Started</button>
     </section>
   </main>
-  <footer>
-    <div class="footer__content content-centered">
-      <div class="footer__logo">
+  <footer class="container">
+    <div class="row footer__content content-centered">
+      <div class="col footer__logo">
         <img src="assets/images/logo.svg" alt="">
       </div>
-      <div class="footer__nav">
-        <ul>Features
+        <ul class="col">Features
           <li><a href="">Link Shortening</a></li>
           <li><a href="">Branded Links</a></li>
           <li><a href="">Analytics</a></li>
         </ul>
-        <ul>Resources
+        <ul class="col">Resources
           <li><a href="">Blog</a></li>
           <li><a href="">Developers</a></li>
           <li><a href="">Support</a></li>
         </ul>
-        <ul>Company
+        <ul class="col">Company
           <li><a href="">About</a></li>
           <li><a href="">Our Team</a></li>
           <li><a href="">Careers</a></li>
           <li><a href="">Contact</a></li>
         </ul>
-      </div>
-        <div class="footer__icons">
+        <div class="col footer__icons">
           <div class="footer__social-media">
             <a href=""><img src="assets/images/icon-facebook.svg" alt="" /></a>
             <a href=""><img src="assets/images/icon-twitter.svg" alt="" /></a>

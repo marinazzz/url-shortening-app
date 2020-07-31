@@ -1,9 +1,10 @@
 @import "./abstracts/variables";
 @import "./abstracts/utilities";
+@import "./abstracts/typography";
 
+@import "./bootstrap/custom-navbar";
 @import "./bootstrap/custom-bootstrap.scss";
 @import "./bootstrap/custom-buttons";
-
 
 @import "./layout/header";
 @import "./layout/hero-section";
