@@ -1,12 +1,6 @@
-@import "./abstracts/variables";
-@import "./abstracts/utilities";
-@import "./abstracts/typography";
+@import "./abstracts/abstracts";
+@import "./components/components.scss";
 
-@import "./bootstrap/custom-navbar";
 @import "./bootstrap/custom-bootstrap.scss";
-@import "./bootstrap/custom-buttons";
 
-@import "./layout/header";
-@import "./layout/hero-section";
-@import "./layout/features";
-@import "./layout/footer";
+@import "./layout/layout";
