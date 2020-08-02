@@ -5,6 +5,18 @@
 //
 
 .btn {
+  // @include button-variant(
+  //   $cyan, 
+  //   $cyan, 
+  //   $hover-background: darken($background, 7.5%), 
+  //   $hover-border: darken($border, 10%), 
+  //   $active-background: darken($background, 10%), 
+  //   $active-border: darken($border, 12.5%)
+  // );
+  // @include hover() {
+  //   color: $white;
+  //   text-decoration: none;
+  // }
     display: inline-block;
     font-family: $btn-font-family;
     font-weight: $btn-font-weight;
@@ -19,10 +31,10 @@
     @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
     @include transition($btn-transition);
 
-    @include hover() {
-      color: $body-color;
-      text-decoration: none;
-    }
+    // @include hover() {
+    //   color: $body-color;
+    //   text-decoration: none;
+    // }
 
     &:focus,
     &.focus {
