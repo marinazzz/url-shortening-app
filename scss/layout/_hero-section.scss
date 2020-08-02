@@ -2,9 +2,21 @@
     &__img {
         position: relative;
         min-height: 373px;
-        background: url(../assets/images/illustration-working.svg);
+        background: no-repeat url(../assets/images/illustration-working.svg);
         background-size: cover;
-        background-repeat: no-repeat;
-        background-position-x: 20px;
+        background-position: -20%;
+
+        @include media-breakpoint-up(md) {
+            background: none;
+            flex: 1;
+            &::before {
+                content: '';
+                width: 35rem;
+                position: absolute;
+                height: 100%;
+                background: no-repeat url(../assets/images/illustration-working.svg);
+                background-size: 95%;
+            }
+        }
     }
 }

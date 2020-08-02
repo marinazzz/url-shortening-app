@@ -17,7 +17,7 @@
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarCollapse">
+      <div class="collapse navbar-collapse rounded" id="navbarCollapse">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
@@ -31,7 +31,7 @@
         </ul>
         <form class="form-inline my-2 my-lg-0 navbar-nav">
           <a class="nav-link" href="#">Login</a>
-          <button class="btn btn-lg rounded-pill my-2 my-sm-0" type="submit">Sign Up</button>
+          <button class="btn rounded-pill my-2 my-sm-0" type="submit">Sign Up</button>
         </form>
       </div>
     </nav>
@@ -40,28 +40,28 @@
     <section class="hero pt-4 pb-6">
       <div class="container">
         <div class="row align-items-center">
-          <div class="hero__img col-sm order-md-2 pb-3">
+          <div class="hero__img col-md order-md-2 pb-3">
           </div>
-          <div class="col-sm order-md-1 pb-5">
+          <div class="col-md order-md-1 pb-5">
             <h1 class="display-4">More than just shorter links</h1>
             <p>Build your brand’s recognition and get detailed insights
               on how your links are performing.
             </p>
-            <button class="btn btn-lg rounded-pill my-2 my-sm-0">
+            <button class="btn rounded-pill my-2 my-sm-0">
               Get Started</button>
           </div>
         </div>
       </div>
     </section>
-    <section class="content">
+    <section class="content pl-3 pl-md-0 pr-3 pr-md-0">
       <div class="container">
         <section class="url-shorten">
-          <div class="url-shorten__form container p-4 rounded">
+          <div id="url-shorten__form" class="container p-3 rounded">
             <form class="form-row justify-content-center">
-              <div class="col-sm-8">
+              <div class="col-sm-8 mb-3 mb-md-0">
                 <input class="form-control" type="search" placeholder="Shorten a link here..." aria-label="Search">
               </div>
-              <div class="col-sm-4 pt-spacer">
+              <div class="col-sm-4">
                 <button class="btn btn-lg btn-block" type="submit">Shorten It!</button>
               </div>
             </form>
@@ -69,26 +69,26 @@
           <div class="pt-6">
             <!-- Url-shorten template -->
             <div class="url-shorten__template row rounded p-3 mt-3">
-              <div class="col-sm-8">
+              <div class="col-sm-8 mb-3 mb-md-0">
                 <span>link</span>
               </div>
-              <div class="col-sm">
+              <div class="col-sm-2 mb-3 mb-md-0">
                 <a href="" class="short-link">short link</a>
               </div>
-              <div class="col-sm">
+              <div class="col-sm-2">
                 <button class="btn btn-sm btn-block" type="button">Copy</button>
               </div>
             </div>
 
             <!-- Url-shorten template active state -->
             <div class="url-shorten__template row rounded p-3 mt-3">
-              <div class="col-sm-8">
+              <div class="col-sm-8 mb-3 mb-md-0">
                 <span>link</span>
               </div>
-              <div class="col-sm">
+              <div class="col-sm-2 mb-3 mb-md-0">
                 <a href="" class="short-link">short link</a>
               </div>
-              <div class="col-sm">
+              <div class="col-sm-2">
                 <button class="btn btn-sm btn-block btn-copied" type="button">Copied!</button>
               </div>
             </div>
@@ -140,7 +140,7 @@
     <section class="cta text-center p-4">
       <div class="cta__background">
         <h2 class="cta__heading">Boost your links today</h2>
-        <button class="btn btn-lg rounded-pill my-2 my-sm-0">
+        <button class="btn rounded-pill my-2 my-sm-0">
           Get Started</button>
       </div>
     </section>
