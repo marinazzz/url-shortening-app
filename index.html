@@ -42,7 +42,7 @@
         <div class="row align-items-center">
           <div class="hero__img col-md order-md-2 pb-3">
           </div>
-          <div class="col-md order-md-1 pb-5">
+          <div class="col-md order-md-1 pb-5 pb-md-0 pt-5 pt-md-0">
             <h1 class="display-4">More than just shorter links</h1>
             <p>Build your brand’s recognition and get detailed insights
               on how your links are performing.
@@ -54,7 +54,7 @@
       </div>
     </section>
     <section class="content pl-3 pl-md-0 pr-3 pr-md-0">
-      <div class="container">
+      <div class="container pl-0 pr-0">
         <section class="url-shorten">
           <div id="url-shorten__form" class="container p-3 rounded">
             <form class="form-row justify-content-center">
@@ -62,69 +62,75 @@
                 <input class="form-control" type="search" placeholder="Shorten a link here..." aria-label="Search">
               </div>
               <div class="col-sm-4">
-                <button class="btn btn-lg btn-block" type="submit">Shorten It!</button>
+                <button class="btn btn-block" type="submit">Shorten It!</button>
               </div>
             </form>
           </div>
           <div class="pt-6">
             <!-- Url-shorten template -->
-            <div class="url-shorten__template row rounded p-3 mt-3">
-              <div class="col-sm-8 mb-3 mb-md-0">
-                <span>link</span>
+            <div class="url-shorten-template">
+              <div>
+                <span class="url-shorten-template__col">https://github.com/marinazzz/url-shortening-app</span>
               </div>
-              <div class="col-sm-2 mb-3 mb-md-0">
-                <a href="" class="short-link">short link</a>
-              </div>
-              <div class="col-sm-2">
-                <button class="btn btn-sm btn-block" type="button">Copy</button>
+              <div class="url-shorten-template__col">
+                <a href="" class="url-shorten-template__short-link">https://bit.ly/3fmd6lR</a>
+                <button class="url-shorten-template__btn" type="button">Copy</button>
               </div>
             </div>
 
             <!-- Url-shorten template active state -->
-            <div class="url-shorten__template row rounded p-3 mt-3">
-              <div class="col-sm-8 mb-3 mb-md-0">
-                <span>link</span>
+            <div class="url-shorten-template">
+              <div>
+                <span class="url-shorten-template__col">https://github.com/marinazzz/url-shortening-app</span>
               </div>
-              <div class="col-sm-2 mb-3 mb-md-0">
-                <a href="" class="short-link">short link</a>
-              </div>
-              <div class="col-sm-2">
-                <button class="btn btn-sm btn-block btn-copied" type="button">Copied!</button>
+              <div class="url-shorten-template__col">
+                <a href="" class="url-shorten-template__short-link">https://bit.ly/3fmd6lR</a>
+                <button class="url-shorten-template__btn url-shorten-template__btn--copied" type="button">Copy</button>
               </div>
             </div>
           </div>
         </section>
-        <section class="features pt-5 pb-5">
-          <h2 class="text-center">Advanced Statistics</h2>
-          <p class="text-center">Track how your links are performing across the web with our
+        <section class="features pt-6 pb-6">
+          <h2 class="text-center pb-3">Advanced Statistics</h2>
+          <p class="text-center mb-0 pb-7">Track how your links are performing across the web with our
             advanced statistics dashboard.</p>
-          <div class="container">
+          <div class="">
             <div class="row">
-              <div class="col-sm-4">
+              <div class="col-sm-4 mb-7 mb-md-0">
                 <div class="card">
                   <!-- flex-direction-column, items align flex start -->
                   <div class="card-body">
-                    <h5 class="card-title">Brand Recognition</h5>
+                    <div class="card-icon">
+                      <img src="assets/images/icon-brand-recognition.svg" alt="">
+                    </div>
+                    <h5 class="card-title pt-5">Brand Recognition</h5>
                     <p class="card-text"> Boost your brand recognition with each click. Generic links don’t
                       mean a thing. Branded links help instil confidence in your content.</p>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div class="col-sm-4 mb-7 mb-md-0 mt-lg-5">
                 <div class="card">
                   <!-- items align flex center -->
                   <div class="card-body">
-                    <h5 class="card-title">Detailed Records</h5>
+                    <div class="card-icon">
+                      <img src="assets/images/icon-detailed-records.svg" alt="">
+                    </div>
+                    <h5 class="card-title pt-5">Detailed Records</h5>
+                    <div class="card-line-behind"></div>
                     <p class="card-text">Gain insights into who is clicking your links. Knowing when and where
                       people engage with your content helps inform better decisions.</p>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4">
+              <div class="col-sm-4 mt-lg-8">
                 <div class="card">
                   <!-- items align flex end -->
                   <div class="card-body">
-                    <h5 class="card-title">Fully Customizable</h5>
+                    <div class="card-icon">
+                      <img src="assets/images/icon-fully-customizable.svg" alt="">
+                    </div>
+                    <h5 class="card-title pt-5">Fully Customizable</h5>
                     <p class="card-text">Improve brand awareness and content discoverability through customizable
                       links, supercharging audience engagement.</p>
                   </div>

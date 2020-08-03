@@ -1,7 +1,8 @@
 @import "./abstracts/abstracts";
-@import "./components/components.scss";
+@import "./abstracts/mixins";
 
 @import "./bootstrap/custom-bootstrap.scss";
+@import "./components/components.scss";
 
 @import "./abstracts/utilities";
 @import "./bootstrap/custom-buttons";

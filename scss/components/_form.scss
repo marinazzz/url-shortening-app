@@ -1,8 +1,11 @@
 #url-shorten__form {
-    background: no-repeat bottom/cover url("../assets/images/bg-shorten-mobile.svg");
-    background-color: $grayish-violet;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     width: calc(100% - 2rem);
+    background: $light-violet no-repeat top/cover url('../assets/images/bg-shorten-mobile.svg');
+
+    @include media-breakpoint-up(md) {
+        background: $light-violet no-repeat top/cover url('../assets/images/bg-shorten-desktop.svg');
+    }
 }

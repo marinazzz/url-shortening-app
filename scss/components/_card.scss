@@ -1,0 +1,27 @@
+.card {
+    position: relative;
+    z-index: 1;
+
+    &-icon {
+        @include position-absolute;
+        margin: auto;
+        max-width: 90px;
+        max-height: 90px;
+        padding: 25px;
+        border-radius: 50%;
+        background: $dark-violet;
+        z-index: 2;
+
+        @include media-breakpoint-up(lg) {
+            left: 25%
+        }
+    }
+
+    &-line-behind {
+        height: 0.4rem;
+        background: turquoise;
+        transform: rotate(90deg);
+        z-index: -1;
+        position: relative;
+    }
+}
