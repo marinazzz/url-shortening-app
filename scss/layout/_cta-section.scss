@@ -4,10 +4,10 @@
     }
 
     &__background {
-        background: $light-violet no-repeat center/cover url('../assets/images/bg-boost-mobile.svg');
+        background: $dark-violet no-repeat center/cover url('../assets/images/bg-boost-mobile.svg');
 
         @include media-breakpoint-up(md) {
-            background: $light-violet no-repeat center/cover url('../assets/images/bg-boost-desktop.svg');
+            background: $dark-violet no-repeat center/cover url('../assets/images/bg-boost-desktop.svg');
         }
     }
 }
