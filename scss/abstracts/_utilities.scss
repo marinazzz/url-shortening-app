@@ -1,5 +1,18 @@
-@media (max-width: 576px) {
+@media (max-width: 768px) {
     .text-xs-center {
       text-align: center;
     }
+}
+
+//Helper classes for width
+.mw-480 {
+  max-width: 480px;
+}
+
+.mw-400 {
+  max-width: 400px;
+}
+
+.w-40px {
+  max-width: 40px;
 }

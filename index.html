@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/icomoon/style.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Shortly URL shortening API Challenge</title>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light container pt-3">
+  <header class="pl-3 pl-md-0 pr-3 pr-md-0">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light container pl-0 pr-0 pt-3">
       <a class="navbar-brand" href="#">
-        <img src="assets/images/logo.svg" alt="">
+        <img src="assets/images/logo.svg" alt="" />
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
         aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,17 +41,17 @@
     </nav>
   </header>
   <main class="text-xs-center">
-    <section class="hero pt-4 pb-6">
-      <div class="container">
+    <section class="hero pl-3 pl-md-0 pr-3 pr-md-0 pt-4 pb-6">
+      <div class="container pl-0 pr-0">
         <div class="row align-items-center">
           <div class="hero__img col-md order-md-2 pb-3">
           </div>
           <div class="col-md order-md-1 pb-5 pb-md-0 pt-5 pt-md-0">
             <h1 class="display-4">More than just shorter links</h1>
-            <p>Build your brand’s recognition and get detailed insights
+            <p class="mw-400">Build your brand’s recognition and get detailed insights
               on how your links are performing.
             </p>
-            <button class="btn rounded-pill my-2 my-sm-0">
+            <button class="btn rounded-pill">
               Get Started</button>
           </div>
         </div>
@@ -56,13 +60,13 @@
     <section class="content pl-3 pl-md-0 pr-3 pr-md-0">
       <div class="container pl-0 pr-0">
         <section class="url-shorten">
-          <div id="url-shorten__form" class="container p-3 rounded">
+          <div id="url-shorten__form" class="container p-4 rounded">
             <form class="form-row justify-content-center">
-              <div class="col-sm-8 mb-3 mb-md-0">
+              <div class="col-md-10 mb-3 mb-md-0">
                 <input class="form-control" type="search" placeholder="Shorten a link here..." aria-label="Search">
               </div>
-              <div class="col-sm-4">
-                <button class="btn btn-block" type="submit">Shorten It!</button>
+              <div class="col-md-2">
+                <button class="btn btn-block text-nowrap" type="submit">Shorten It!</button>
               </div>
             </form>
           </div>
@@ -92,16 +96,16 @@
         </section>
         <section class="features pt-6 pb-6">
           <h2 class="text-center pb-3">Advanced Statistics</h2>
-          <p class="text-center mb-0 pb-7">Track how your links are performing across the web with our
+          <p class="text-center mx-auto mb-0 pb-7 mw-480">Track how your links are performing across the web with our
             advanced statistics dashboard.</p>
-          <div class="">
+          <div class="position-relative">
+            <div class="card-line-behind"></div>
             <div class="row">
-              <div class="col-sm-4 mb-7 mb-md-0">
+              <div class="col-lg-4 mb-7 mb-lg-0">
                 <div class="card">
-                  <!-- flex-direction-column, items align flex start -->
                   <div class="card-body">
                     <div class="card-icon">
-                      <img src="assets/images/icon-brand-recognition.svg" alt="">
+                      <img src="assets/images/icon-brand-recognition.svg" alt="" />
                     </div>
                     <h5 class="card-title pt-5">Brand Recognition</h5>
                     <p class="card-text"> Boost your brand recognition with each click. Generic links don’t
@@ -109,26 +113,23 @@
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4 mb-7 mb-md-0 mt-lg-5">
+              <div class="col-lg-4 mb-7 mb-lg-0 mt-lg-5">
                 <div class="card">
-                  <!-- items align flex center -->
                   <div class="card-body">
                     <div class="card-icon">
-                      <img src="assets/images/icon-detailed-records.svg" alt="">
+                      <img src="assets/images/icon-detailed-records.svg" alt="" />
                     </div>
                     <h5 class="card-title pt-5">Detailed Records</h5>
-                    <div class="card-line-behind"></div>
                     <p class="card-text">Gain insights into who is clicking your links. Knowing when and where
                       people engage with your content helps inform better decisions.</p>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-4 mt-lg-8">
+              <div class="col-lg-4 mt-lg-8">
                 <div class="card">
-                  <!-- items align flex end -->
                   <div class="card-body">
                     <div class="card-icon">
-                      <img src="assets/images/icon-fully-customizable.svg" alt="">
+                      <img src="assets/images/icon-fully-customizable.svg" class="w-40px" alt="" />
                     </div>
                     <h5 class="card-title pt-5">Fully Customizable</h5>
                     <p class="card-text">Improve brand awareness and content discoverability through customizable
@@ -143,53 +144,69 @@
       </div>
     </section>
     </section>
-    <section class="cta text-center p-4">
-      <div class="cta__background">
-        <h2 class="cta__heading">Boost your links today</h2>
-        <button class="btn rounded-pill my-2 my-sm-0">
+    <section class="cta text-center">
+      <div class="cta__background pt-5 pb-5">
+        <h2 class="cta__heading mb-0 pb-4">Boost your links today</h2>
+        <button class="btn rounded-pill">
           Get Started</button>
       </div>
     </section>
   </main>
-  <footer class="container">
-    <div class="row footer__content content-centered">
-      <div class="col footer__logo">
-        <img src="assets/images/logo.svg" alt="">
-      </div>
-      <ul class="col">Features
-        <li><a href="">Link Shortening</a></li>
-        <li><a href="">Branded Links</a></li>
-        <li><a href="">Analytics</a></li>
-      </ul>
-      <ul class="col">Resources
-        <li><a href="">Blog</a></li>
-        <li><a href="">Developers</a></li>
-        <li><a href="">Support</a></li>
-      </ul>
-      <ul class="col">Company
-        <li><a href="">About</a></li>
-        <li><a href="">Our Team</a></li>
-        <li><a href="">Careers</a></li>
-        <li><a href="">Contact</a></li>
-      </ul>
-      <div class="col footer__icons">
-        <div class="footer__social-media">
-          <a href=""><img src="assets/images/icon-facebook.svg" alt="" /></a>
-          <a href=""><img src="assets/images/icon-twitter.svg" alt="" /></a>
-          <a href=""><img src="assets/images/icon-pinterest.svg" alt="" /></a>
-          <a href=""><img src="assets/images/icon-instagram.svg" alt="" /></a>
+  <footer class="footer text-white pt-5 pb-5 pl-3 pl-md-0 pr-3 pr-md-0">
+    <div class="container text-xs-center pl-0 pr-0">
+      <div class="row">
+        <div class="col-md-4 pb-4 pb-md-0">
+          <img src="assets/images/logo-white.svg" alt="">
+        </div>
+        <div class="col-md-2">
+          <ul class="list-unstyled small mb-0 pb-4">
+            <h6 class="pb-2">Features</h6>
+            <li class="pb-2"><a class="custom-link" href="">Link Shortening</a></li>
+            <li class="pb-2"><a class="custom-link" href="">Branded Links</a></li>
+            <li class="pb-2"><a class="custom-link" href="">Analytics</a></li>
+          </ul>
+        </div>
+        <div class="col-md-2">
+          <ul class="list-unstyled small mb-0 pb-4">
+            <h6 class="pb-2">Resources</h6>
+            <li class="pb-2"><a class="custom-link" href="">Blog</a></li>
+            <li class="pb-2"><a class="custom-link" href="">Developers</a></li>
+            <li class="pb-2"><a class="custom-link" href="">Support</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 d-flex flex-wrap">
+          <div class="col-md">
+            <ul class="list-unstyled small mb-0 pb-5">
+              <h6 class="pb-2">Company</h6>
+              <li class="pb-2"><a class="custom-link" href="">About</a></li>
+              <li class="pb-2"><a class="custom-link" href="">Our Team</a></li>
+              <li class="pb-2"><a class="custom-link" href="">Careers</a></li>
+              <li class="pb-2"><a class="custom-link" href="">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md">
+            <div class="d-flex justify-content-between pb-4 pb-md-5 pl-7 pr-7 pl-md-0 pr-md-0">
+              <a class="custom-link" href=""><span class="icon-icon-facebook"></span></a>
+              <a class="custom-link" href=""><span class="icon-icon-instagram"></span></a>
+              <a class="custom-link" href=""><span class="icon-icon-pinterest"></span></a>
+              <a class="custom-link" href=""><span class="icon-icon-twitter"></span></a>
+            </div>
+            <div class="small">
+              <a class="d-block custom-link pb-2" href="https://github.com/marinazzz">Developed by m_Z
+                <i class="fab fa-github"></i></a>
+              <a class="d-block custom-link" href="https://www.frontendmentor.io?ref=challenge">Design by Frontend
+                Mentor
+              </a>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="footer__attribution">
-        Challenge by Frontend Mentor <a href="https://www.frontendmentor.io?ref=challenge"> </a>
-        <div class="footer__attribution">
-          <a href="https://github.com/marinazzz">Coded by Marina Zujic</a>
-        </div>
-      </div>
+    </div>
   </footer>
   <script src="node_modules/jquery/dist/jquery.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="js/app.js"></script>
 </body>
+
 </html>

@@ -10,18 +10,27 @@
         padding: 25px;
         border-radius: 50%;
         background: $dark-violet;
-        z-index: 2;
 
         @include media-breakpoint-up(lg) {
-            left: 25%
+            left: 25%;
         }
     }
 
     &-line-behind {
+        position: absolute;
         height: 0.4rem;
-        background: turquoise;
+        width: 100%;
+        top: 50%;
         transform: rotate(90deg);
-        z-index: -1;
-        position: relative;
+        background: $cyan;
+
+        @include media-breakpoint-down(sm) {
+            width: 150%;
+            left: -25%;
+        }
+        @include media-breakpoint-up(lg) {
+            top: 43%;
+            transform: none;
+        }
     }
 }

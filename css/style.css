@@ -7,11 +7,46 @@ p {
   color: #9e9aa7;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .text-xs-center {
     text-align: center;
   }
 }
+.mw-480 {
+  max-width: 480px;
+}
+
+.mw-400 {
+  max-width: 400px;
+}
+
+.w-40px {
+  max-width: 40px;
+}
+
+.custom-link {
+  color: #bfbfbf;
+}
+.custom-link:hover {
+  color: #2acfcf;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-icon-facebook:before,
+.icon-icon-instagram:before,
+.icon-icon-pinterest:before,
+.icon-icon-twitter:before {
+  color: white;
+}
+
+.icon-icon-facebook:hover::before,
+.icon-icon-instagram:hover::before,
+.icon-icon-pinterest:hover::before,
+.icon-icon-twitter:hover::before {
+  color: #2acfcf;
+  transition: all 0.2s ease-in-out;
+}
+
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
  * Copyright 2011-2020 The Bootstrap Authors
@@ -171,7 +206,7 @@ a {
 }
 a:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]) {
@@ -219,7 +254,7 @@ table {
 caption {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
-  color: #6c757d;
+  color: #bfbfbf;
   text-align: left;
   caption-side: bottom;
 }
@@ -1849,7 +1884,7 @@ textarea.form-control {
   margin-left: -1.25rem;
 }
 .form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
-  color: #6c757d;
+  color: #bfbfbf;
 }
 
 .form-check-label {
@@ -2596,10 +2631,10 @@ fieldset:disabled a.btn {
 }
 .btn-link:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .btn-link:focus, .btn-link.focus {
-  text-decoration: underline;
+  text-decoration: none;
 }
 .btn-link:disabled, .btn-link.disabled {
   color: #6c757d;
@@ -9087,7 +9122,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .text-muted {
-  color: #6c757d !important;
+  color: #bfbfbf !important;
 }
 
 .text-black-50 {
@@ -9183,7 +9218,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .url-shorten-template__short-link:hover {
   text-decoration: none;
-  color: #22a5a5;
+  color: #1d9090;
 }
 .url-shorten-template__btn {
   display: block;
@@ -9206,13 +9241,13 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 .url-shorten-template__btn:hover {
-  background: #51dbdb;
+  background: #67e0e0;
 }
 .url-shorten-template__btn--copied {
   background-color: #3b3054;
 }
 .url-shorten-template__btn--copied:hover {
-  background: #514375;
+  background: #5c4c85;
 }
 
 .card {
@@ -9230,7 +9265,6 @@ a.text-dark:hover, a.text-dark:focus {
   padding: 25px;
   border-radius: 50%;
   background: #3b3054;
-  z-index: 2;
 }
 @media (min-width: 992px) {
   .card-icon {
@@ -9238,18 +9272,43 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 .card-line-behind {
+  position: absolute;
   height: 0.4rem;
-  background: turquoise;
+  width: 100%;
+  top: 50%;
   transform: rotate(90deg);
-  z-index: -1;
-  position: relative;
+  background: #2acfcf;
+}
+@media (max-width: 767.98px) {
+  .card-line-behind {
+    width: 150%;
+    left: -25%;
+  }
+}
+@media (min-width: 992px) {
+  .card-line-behind {
+    top: 43%;
+    transform: none;
+  }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .text-xs-center {
     text-align: center;
   }
 }
+.mw-480 {
+  max-width: 480px;
+}
+
+.mw-400 {
+  max-width: 400px;
+}
+
+.w-40px {
+  max-width: 40px;
+}
+
 .btn {
   color: #212529;
   background-color: #2acfcf;
@@ -9326,7 +9385,7 @@ a.text-dark:hover, a.text-dark:focus {
 .hero__img {
   position: relative;
   min-height: 373px;
-  background: no-repeat url(../assets/images/illustration-working.svg);
+  background: no-repeat url("../assets/images/illustration-working.svg");
   background-size: cover;
   background-position: -20%;
 }
@@ -9340,7 +9399,7 @@ a.text-dark:hover, a.text-dark:focus {
     width: 35rem;
     position: absolute;
     height: 100%;
-    background: no-repeat url(../assets/images/illustration-working.svg);
+    background: no-repeat url("../assets/images/illustration-working.svg");
     background-size: 95%;
   }
 }
@@ -9354,8 +9413,16 @@ a.text-dark:hover, a.text-dark:focus {
   color: white;
 }
 .cta__background {
-  background: no-repeat bottom/cover url(../assets/images/bg-boost-mobile.svg);
-  background-color: #9e9aa7;
+  background: rgba(75, 64, 107, 0.88) no-repeat center/cover url("../assets/images/bg-boost-mobile.svg");
+}
+@media (min-width: 768px) {
+  .cta__background {
+    background: rgba(75, 64, 107, 0.88) no-repeat center/cover url("../assets/images/bg-boost-desktop.svg");
+  }
+}
+
+.footer {
+  background: #232127;
 }
 
 /*# sourceMappingURL=style.css.map */

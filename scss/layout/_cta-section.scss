@@ -4,7 +4,10 @@
     }
 
     &__background {
-        background: no-repeat bottom/cover url(../assets/images/bg-boost-mobile.svg);
-        background-color: $grayish-violet;
+        background: $light-violet no-repeat center/cover url('../assets/images/bg-boost-mobile.svg');
+
+        @include media-breakpoint-up(md) {
+            background: $light-violet no-repeat center/cover url('../assets/images/bg-boost-desktop.svg');
+        }
     }
 }

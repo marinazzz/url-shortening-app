@@ -32,7 +32,7 @@
 
         &:hover {
             text-decoration: none;
-            color: darken($color: $cyan, $amount: 10)
+            color: darken($color: $cyan, $amount: 15)
         }
     }
 
@@ -56,13 +56,13 @@
         }
 
         &:hover {
-            background: lighten($color: $cyan, $amount: 10);
+            background: lighten($color: $cyan, $amount: 15);
         }
 
         &--copied {
            background-color: $dark-violet;
            &:hover {
-            background: lighten($color: $dark-violet, $amount: 10);
+            background: lighten($color: $dark-violet, $amount: 15);
            }
         }
     }

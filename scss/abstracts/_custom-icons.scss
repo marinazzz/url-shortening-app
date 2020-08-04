@@ -1,0 +1,14 @@
+.icon-icon-facebook:before,
+.icon-icon-instagram:before,
+.icon-icon-pinterest:before,
+.icon-icon-twitter:before {
+    color: $white;
+}
+
+.icon-icon-facebook:hover::before,
+.icon-icon-instagram:hover::before,
+.icon-icon-pinterest:hover::before,
+.icon-icon-twitter:hover::before {
+    color: $cyan;
+    transition: $easy-in-out;
+}
