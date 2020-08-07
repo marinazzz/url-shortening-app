@@ -8,4 +8,4 @@
 
 ### Live demo
 
-> GitHub Pages
+> https://marinazzz.github.io/url-shortening-app/
