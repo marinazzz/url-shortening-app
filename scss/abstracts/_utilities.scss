@@ -1,19 +1,15 @@
-//  you could use bootstrap responsiive mixin for this
-@media (max-width: 768px) {
-    .text-xs-center {
-      text-align: center;
-    }
+@include media-breakpoint-down(sm) {
+  .text-xs-center {
+    text-align: center;
+  }
 }
 
 //Helper classes for width
-.mw-480 {
-  max-width: 480px;
+
+.mw-30 {
+  max-width: 30rem;
 }
 
-.mw-400 {
-  max-width: 400px;
-}
-
-.w-40px {
-  max-width: 40px;
+.square-sm {
+  max-width: 2.5rem;
 }

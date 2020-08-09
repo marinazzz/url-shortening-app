@@ -1,4 +1,4 @@
-#url-shorten__form {
+.url-shorten__form {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -7,5 +7,21 @@
 
     @include media-breakpoint-up(md) {
         background: $dark-violet no-repeat top/cover url('../assets/images/bg-shorten-desktop.svg');
+    }
+
+    .form {
+        @include media-breakpoint-up(md) {
+            @include flex;
+            justify-content: space-around;
+        }
+
+        .form-control {
+            flex: 0 0 80%;
+        }
+
+        .btn {
+            flex: 0 0 15%;
+            font-size: 1rem;
+        }
     }
 }

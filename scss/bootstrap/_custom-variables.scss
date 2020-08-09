@@ -3,8 +3,12 @@
 // Variables should follow the `$component-state-property-size` formula for
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
-// Color system
 
+//Transitons
+$easy-in-out: all .2s ease-in-out;
+
+//Colors
+$transparent: transparent;
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -15,6 +19,8 @@ $gray-600: #6c757d !default;
 $gray-700: #495057 !default;
 $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
+$very-light-gray: #bfbfbf91;
+$grayish-violet: #9e9aa7;
 $black:    #000 !default;
 
 $grays: () !default;
@@ -38,12 +44,15 @@ $blue:    #007bff !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
 $pink:    #e83e8c !default;
-$red:     #dc3545 !default;
+$red:     #f46262;
 $orange:  #fd7e14 !default;
 $yellow:  #ffc107 !default;
 $green:   #28a745 !default;
 $teal:    #20c997 !default;
-$cyan:    #17a2b8 !default;
+$cyan:    #2acfcf;
+$dark-violet: #3b3054;
+$very-dark-blue: hsl(255, 11%, 22%);
+$very-dark-violet: hsl(260, 8%, 14%);
 
 $colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -61,18 +70,21 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray-dark":  $gray-800,
+    "dark-violet":  $dark-violet,
+    "very-light-gray": $very-light-gray,
+    "grayish-violet": $grayish-violet
   ),
   $colors
 );
 
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       $cyan;
+$secondary:     $gray-600;
 $success:       $green !default;
-$info:          $cyan !default;
+$info:          $dark-violet;
 $warning:       $yellow !default;
-$danger:        $red !default;
-$light:         $gray-100 !default;
+$danger:        $red;
+$light:         $grayish-violet;
 $dark:          $gray-800 !default;
 
 $theme-colors: () !default;
@@ -174,16 +186,16 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $gray-100 !default;
-$body-color:                $gray-900 !default;
+$body-color:                $grayish-violet;
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              theme-color("primary") !default;
+$link-color:                              theme-color("secondary") !default;
 $link-decoration:                         none !default;
-$link-hover-color:                        darken($link-color, 15%) !default;
+$link-hover-color:                        darken($cyan, 15%);
 $link-hover-decoration:                   none;
 // Darken percentage for links with `.text-*` class (e.g. `.text-success`)
 $emphasized-link-hover-darken-percentage: 15% !default;

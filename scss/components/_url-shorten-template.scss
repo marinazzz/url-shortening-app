@@ -16,9 +16,8 @@
 
         @include media-breakpoint-up(md) {
             @include flex;
-            /* you could change these units to rem */
-            // max-width: 500px;
         }
+
       &.link-col {
         flex: 2 2 auto;
       }
@@ -26,10 +25,6 @@
       &.short-link-col {
         flex: 1 1 auto;
       }
-    }
-
-    &__link {
-      
     }
 
     &__short-link {
@@ -63,7 +58,6 @@
         transition: all 0.15s ease-in-out;
 
         @include media-breakpoint-up(md) {
-          /* this is modified from max-width to width to ensure all buttons are same width on larger screens */ 
           width: 5rem;
           font-size: 0.7rem;
         }

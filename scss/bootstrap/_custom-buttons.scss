@@ -1,8 +1,8 @@
 .btn {
   @include button-variant(
-    $cyan,
+    $primary,
     $transparent,
-    $hover-background: lighten($cyan, 15%)
+    $hover-background: lighten($primary, 15%)
   );
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
   @include hover() {

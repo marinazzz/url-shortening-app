@@ -5,9 +5,9 @@
     &-icon {
         @include position-absolute;
         margin: auto;
-        max-width: 90px;
-        max-height: 90px;
-        padding: 25px;
+        max-width: 5.6rem;
+        max-height: 5.6rem;
+        padding: 1.56rem;
         border-radius: 50%;
         background: $dark-violet;
 
@@ -25,8 +25,8 @@
         background: $cyan;
 
         @include media-breakpoint-down(sm) {
-            width: 150%;
-            left: -25%;
+            width: 148%;
+            left: -24%;
         }
         @include media-breakpoint-up(lg) {
             top: 43%;
