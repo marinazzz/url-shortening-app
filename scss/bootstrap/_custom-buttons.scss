@@ -3,12 +3,12 @@
     $cyan,
     $transparent,
     $hover-background: lighten($cyan, 15%)
-    );
-    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
-    @include hover() {
-      color: $white;
-      text-decoration: none;
-    }
+  );
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-line-height, $btn-border-radius);
+  @include hover() {
     color: $white;
-    height: 100%;
+    text-decoration: none;
   }
+  color: $white;
+  height: 100%;
+}

@@ -1,6 +1,7 @@
 .hero {
     &__img {
         position: relative;
+        /* you could change these units to rem */ 
         min-height: 373px;
         background: no-repeat url('../assets/images/illustration-working.svg');
         background-size: cover;

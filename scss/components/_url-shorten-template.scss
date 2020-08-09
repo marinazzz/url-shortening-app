@@ -16,24 +16,36 @@
 
         @include media-breakpoint-up(md) {
             @include flex;
-            max-width: 500px;
+            /* you could change these units to rem */
+            // max-width: 500px;
         }
+      &.link-col {
+        flex: 2 2 auto;
+      }
+
+      &.short-link-col {
+        flex: 1 1 auto;
+      }
+    }
+
+    &__link {
+      
     }
 
     &__short-link {
-        display: block;
-        padding: 1.5rem 0 1rem 0;
-        @include text-overflow;
-        color: $cyan;
+      display: block;
+      padding: 1.5rem 0 1rem 0;
+      @include text-overflow;
+      color: $cyan;
 
-        @include media-breakpoint-up(md) {
-            padding: 0 0.8rem 0 0;
-        }
+      @include media-breakpoint-up(md) {
+        padding: 0 0.8rem 0 0;
+      }
 
-        &:hover {
-            text-decoration: none;
-            color: darken($color: $cyan, $amount: 15)
-        }
+      &:hover {
+        text-decoration: none;
+        color: darken($color: $cyan, $amount: 15)
+      }
     }
 
     &__btn {
@@ -51,8 +63,9 @@
         transition: all 0.15s ease-in-out;
 
         @include media-breakpoint-up(md) {
-           max-width: 4rem;
-           font-size: 0.7rem;
+          /* this is modified from max-width to width to ensure all buttons are same width on larger screens */ 
+          width: 5rem;
+          font-size: 0.7rem;
         }
 
         &:hover {

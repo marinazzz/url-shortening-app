@@ -3,6 +3,9 @@ html {
   overflow-x: hidden;
 }
 
+/*
+  this could be moved into custom-variables partial iin bootstrap folder
+*/
 p {
   color: #9e9aa7;
 }
@@ -9200,8 +9203,14 @@ a.text-dark:hover, a.text-dark:focus {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 500px;
+    /* you could change these units to rem */
   }
+}
+.url-shorten-template__col.link-col {
+  flex: 2 2 auto;
+}
+.url-shorten-template__col.short-link-col {
+  flex: 1 1 auto;
 }
 .url-shorten-template__short-link {
   display: block;
@@ -9236,7 +9245,8 @@ a.text-dark:hover, a.text-dark:focus {
 }
 @media (min-width: 768px) {
   .url-shorten-template__btn {
-    max-width: 4rem;
+    /* this is modified from max-width to width to ensure all buttons are same width on larger screens */
+    width: 5rem;
     font-size: 0.7rem;
   }
 }
@@ -9384,6 +9394,7 @@ a.text-dark:hover, a.text-dark:focus {
 
 .hero__img {
   position: relative;
+  /* you could change these units to rem */
   min-height: 373px;
   background: no-repeat url("../assets/images/illustration-working.svg");
   background-size: cover;
