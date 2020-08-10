@@ -9148,12 +9148,16 @@ a.text-dark:hover, a.text-dark:focus {
     justify-content: space-around;
   }
 }
-.url-shorten__form .form .form-control {
+.url-shorten__form .form__col {
   flex: 0 0 80%;
 }
 .url-shorten__form .form .btn {
   flex: 0 0 15%;
   font-size: 1rem;
+}
+
+.was-validated :invalid ~ .invalid-feedback, .was-validated :invalid ~ .invalid-tooltip, .is-invalid ~ .invalid-feedback, .is-invalid ~ .invalid-tooltip {
+  display: flex;
 }
 
 .url-shorten-template {
