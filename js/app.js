@@ -22,10 +22,9 @@ $(document).ready(function () {
     }
   });
 
-  // there is no need to use $ in front object property names since they are not jQuery objects
   const validation = {
-    $searchVal: false,
-    $validUrl: false
+    searchVal: false,
+    validUrl: false
   };
 
   function checkSearchEmpty() {
@@ -37,24 +36,26 @@ $(document).ready(function () {
     validation.$searchVal = true;
   }
 
-  // please refactor this using checkSearchEmpty function as a reference
   function checkUrlValid() {
-    if ($search.val().startsWith('https://') == false && $search.val().startsWith('http://') == false) {
+    if (($search.val().startsWith('https://') === false) && ($search.val().startsWith('http://') === false)) {
       $search.addClass('is-invalid');
-    } return validation.$validUrl = true;
+      validation.$validUrl = false;
+      return;
+    }
+    validation.$validUrl = true;
   }
 
-  //removes class after input is filled out
   $search.click(removeInvalidClass);
 
   function removeInvalidClass() {
-    if (validation.$searchVal) {
+    if ($search.hasClass('is-invalid')) {
       $search.removeClass('is-invalid');
     }
   }
 
   let $template = $('.template');
 
+  const shortLink;
   function addLink(link, shortLinkHash) {
     const shortLink = apiRootURL + '/' + shortLinkHash;
     $template.append(`
@@ -64,26 +65,10 @@ $(document).ready(function () {
         </div>
         <div class="url-shorten-template__col short-link-col">
           <a href="${shortLink}" target="_blank" class="url-shorten-template__short-link">${shortLink}</a>
-          <button class="url-shorten-template__btn" type="button">Copy</button>
+          <button class="url-shorten-template__btn copy-btn" type="button">Copy</button>
         </div>
       </div>
     `);
   }
-
-  //post data
-
-  /* let link = {
-    search: $search.val()
-  }
-
- function fetchUrls() {
-   $.ajax({
-     type: 'POST',
-     url: 'https://rel.ink/api/links/',
-     data: link,
-   }).done(function(){
-     displayLinks();
-   });
- } */
 
 });
