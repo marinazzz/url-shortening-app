@@ -11,7 +11,6 @@
 
     &__col {
         display: block;
-        max-width: none;
         @include text-overflow;
 
         @include media-breakpoint-up(md) {
@@ -19,22 +18,26 @@
         }
 
       &.link-col {
-        flex: 2 2 auto;
+        flex: 0 0 70%;
       }
 
       &.short-link-col {
-        flex: 1 1 auto;
+        flex: 0 0 25%;
       }
+    }
+
+    &__link {
+      @include text-overflow;
     }
 
     &__short-link {
       display: block;
-      padding: 1.5rem 0 1rem 0;
+      padding: 1rem 0;
       @include text-overflow;
       color: $cyan;
 
       @include media-breakpoint-up(md) {
-        padding: 0 0.8rem 0 0;
+        padding: 0;
       }
 
       &:hover {

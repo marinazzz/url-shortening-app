@@ -9176,7 +9176,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 .url-shorten-template__col {
   display: block;
-  max-width: none;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -9189,14 +9188,19 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 .url-shorten-template__col.link-col {
-  flex: 2 2 auto;
+  flex: 0 0 70%;
 }
 .url-shorten-template__col.short-link-col {
-  flex: 1 1 auto;
+  flex: 0 0 25%;
+}
+.url-shorten-template__link {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .url-shorten-template__short-link {
   display: block;
-  padding: 1.5rem 0 1rem 0;
+  padding: 1rem 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -9204,7 +9208,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 @media (min-width: 768px) {
   .url-shorten-template__short-link {
-    padding: 0 0.8rem 0 0;
+    padding: 0;
   }
 }
 .url-shorten-template__short-link:hover {

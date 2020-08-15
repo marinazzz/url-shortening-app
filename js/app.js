@@ -17,9 +17,10 @@ $(document).ready(function () {
         dataType: "json"
       })
         .done((data, textStatus, jqXHR) => {
-          addLink(data.url, data.hashid);
+          addLinks(data.url, data.hashid);
         });
     }
+
   });
 
   const validation = {
@@ -55,9 +56,8 @@ $(document).ready(function () {
 
   let $template = $('.template');
 
-  const shortLink;
-  function addLink(link, shortLinkHash) {
-    const shortLink = apiRootURL + '/' + shortLinkHash;
+  function addLinks(link, shortLinkHash) {
+    let shortLink = apiRootURL + '/' + shortLinkHash;
     $template.append(`
       <div class="url-shorten-template">
         <div class="url-shorten-template__col link-col">
@@ -69,6 +69,44 @@ $(document).ready(function () {
         </div>
       </div>
     `);
+
+    copyToClipboard($('.url-shorten-template__short-link'));
+    //registerEvents();
   }
+
+  //TD: Copy short link to clipboard on button click, using document.execCommand('copy')
+  //BUG: Link is copied just for the first displayed shortened link, next doesn't work
+  function copyToClipboard(element) {
+
+    $('.copy-btn').click(function () {
+      let $temp = $('<input>');
+      $('body').append($temp);
+      $temp.val($(element).html()).select();
+      document.execCommand('copy');
+      $temp.remove();
+
+      switchBtnClass();
+    });
+  }
+
+  function switchBtnClass() {
+    $('.copy-btn').addClass('url-shorten-template__btn--copied');
+    $('.copy-btn').text('copied');
+  }
+
+
+  // TD: Same function as copyToClipboard, using Clipboard.writeText()
+  // BUG: It turns [object Object] instead of short link
+
+  //  function registerEvents() {
+
+  //   $('.copy-btn').click(function () {
+  //       navigator.clipboard.writeText($('.url-shorten-template__short-link'))
+  //       .then(function () {
+  //         $('.copy-btn').addClass('url-shorten-template__btn--copied');
+  //         $('.copy-btn').text('copied');
+  //       })
+  //   });
+  // }
 
 });
