@@ -4,6 +4,7 @@ $(document).ready(function () {
 
   $('#submitBtn').click(function (e) {
     e.preventDefault();
+
     checkSearchEmpty();
     checkUrlValid();
 
@@ -16,7 +17,7 @@ $(document).ready(function () {
         },
         dataType: "json"
       })
-        .done((data, textStatus, jqXHR) => {
+        .done((data) => {
           addLinks(data.url, data.hashid);
         });
     }
@@ -38,7 +39,7 @@ $(document).ready(function () {
   }
 
   function checkUrlValid() {
-    if (($search.val().startsWith('https://') === false) && ($search.val().startsWith('http://') === false)) {
+    if (!$search.val().startsWith('https://') && !$search.val().startsWith('http://')) {
       $search.addClass('is-invalid');
       validation.$validUrl = false;
       return;
@@ -54,9 +55,8 @@ $(document).ready(function () {
     }
   }
 
-  let $template = $('.template');
-
   function addLinks(link, shortLinkHash) {
+    let $template = $('.template');
     let shortLink = apiRootURL + '/' + shortLinkHash;
     $template.append(`
       <div class="url-shorten-template">
@@ -70,43 +70,36 @@ $(document).ready(function () {
       </div>
     `);
 
-    copyToClipboard($('.url-shorten-template__short-link'));
-    //registerEvents();
+    copyToClipboard($('.url-shorten-template__short-link'), $('.copy-btn'));
+  }
+
+  // TD: Copy short link to clipboard on button click, using Clipboard API Clipboard.writeText()
+  //BUG: Link is copied just for the first displayed shortened link, next doesn't work
+
+  function copyToClipboard(element, button) {
+    $(button).click(function () {
+      navigator.clipboard.writeText($(element).html());
+
+      switchBtnClass($(button));
+    });
   }
 
   //TD: Copy short link to clipboard on button click, using document.execCommand('copy')
   //BUG: Link is copied just for the first displayed shortened link, next doesn't work
-  function copyToClipboard(element) {
 
-    $('.copy-btn').click(function () {
-      let $temp = $('<input>');
-      $('body').append($temp);
-      $temp.val($(element).html()).select();
-      document.execCommand('copy');
-      $temp.remove();
+  // function copyToClipboard(element, button) {
+  //   $(button).click(function () {
+  //     let $text = $(element).html();
+  //     let $tempElement = $('<input>').val($text).appendTo('body').select();
+  //     document.execCommand('copy');
+  //     $tempElement.remove();
 
-      switchBtnClass();
-    });
-  }
-
-  function switchBtnClass() {
-    $('.copy-btn').addClass('url-shorten-template__btn--copied');
-    $('.copy-btn').text('copied');
-  }
-
-
-  // TD: Same function as copyToClipboard, using Clipboard.writeText()
-  // BUG: It turns [object Object] instead of short link
-
-  //  function registerEvents() {
-
-  //   $('.copy-btn').click(function () {
-  //       navigator.clipboard.writeText($('.url-shorten-template__short-link'))
-  //       .then(function () {
-  //         $('.copy-btn').addClass('url-shorten-template__btn--copied');
-  //         $('.copy-btn').text('copied');
-  //       })
+  //     switchBtnClass($(button));
   //   });
   // }
+
+  function switchBtnClass(element) {
+    $(element).addClass('url-shorten-template__btn--copied').text('copied');
+  }
 
 });
