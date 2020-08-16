@@ -2,6 +2,9 @@ $(document).ready(function () {
   const apiRootURL = 'https://rel.ink';
   const $search = $('#search');
 
+  // TODO:
+  // 1. prevent user from adding multiple links by clicking fast on "shorten it" button
+  // 2. clear link input field when link is successfuly shortened 
   $('#submitBtn').click(function (e) {
     e.preventDefault();
 
@@ -19,10 +22,13 @@ $(document).ready(function () {
       })
         .done((data) => {
           addLinks(data.url, data.hashid);
-        });
-    }
 
+        });
+
+    }
   });
+
+  new ClipboardJS('.copy-btn');
 
   const validation = {
     searchVal: false,
@@ -55,9 +61,10 @@ $(document).ready(function () {
     }
   }
 
+
   function addLinks(link, shortLinkHash) {
-    let $template = $('.template');
-    let shortLink = apiRootURL + '/' + shortLinkHash;
+    const $template = $('.template');
+    const shortLink = apiRootURL + '/' + shortLinkHash;
     $template.append(`
       <div class="url-shorten-template">
         <div class="url-shorten-template__col link-col">
@@ -65,41 +72,50 @@ $(document).ready(function () {
         </div>
         <div class="url-shorten-template__col short-link-col">
           <a href="${shortLink}" target="_blank" class="url-shorten-template__short-link">${shortLink}</a>
-          <button class="url-shorten-template__btn copy-btn" type="button">Copy</button>
+          <button class="url-shorten-template__btn copy-btn" type="button" data-clipboard-text="${shortLink}">Copy</button>
         </div>
       </div>
     `);
 
-    copyToClipboard($('.url-shorten-template__short-link'), $('.copy-btn'));
+    const lastLinkNode = $('.url-shorten-template').last();
+    lastLinkNode.find('.copy-btn').on('click', function () {
+      $('.copy-btn').each(function () {
+        if ($(this).hasClass('url-shorten-template__btn--copied')) {
+          $(this).removeClass('url-shorten-template__btn--copied');
+          $(this).addClass('url-shorten-template__btn');
+          $(this).text('Copy');
+        }
+      });
+      $(this).addClass('url-shorten-template__btn--copied').text('Copied');
+    });
+
   }
 
   // TD: Copy short link to clipboard on button click, using Clipboard API Clipboard.writeText()
   //BUG: Link is copied just for the first displayed shortened link, next doesn't work
 
-  function copyToClipboard(element, button) {
-    $(button).click(function () {
-      navigator.clipboard.writeText($(element).html());
-
-      switchBtnClass($(button));
-    });
-  }
-
-  //TD: Copy short link to clipboard on button click, using document.execCommand('copy')
-  //BUG: Link is copied just for the first displayed shortened link, next doesn't work
-
   // function copyToClipboard(element, button) {
   //   $(button).click(function () {
-  //     let $text = $(element).html();
-  //     let $tempElement = $('<input>').val($text).appendTo('body').select();
-  //     document.execCommand('copy');
-  //     $tempElement.remove();
-
+  //     navigator.clipboard.writeText($(element).html());
   //     switchBtnClass($(button));
   //   });
   // }
 
-  function switchBtnClass(element) {
-    $(element).addClass('url-shorten-template__btn--copied').text('copied');
+  //TD: Copy short link to clipboard on button click, using document.execCommand('copy')
+  //BUG: Link is copied just for the first displayed shortened link, next doesn't work
+
+  function copyToClipboard(shortLink) {
+    const $tempElement = $('<input type="hidden">').val(shortLink).appendTo('body').select();
+    document.execCommand('copy');
+    $tempElement.remove();
+
+    let cbData = event.clipboardData || window.clipboardData || event.originalEvent.clipboardData;
+    cbData.setData('textr/html', shortLink);
+    console.log(cbData);
   }
+
+  // function switchBtnClass(element) {
+  //   $(element).addClass('url-shorten-template__btn--copied').text('copied');
+  // }
 
 });
