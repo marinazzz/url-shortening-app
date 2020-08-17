@@ -1,17 +1,16 @@
 $(document).ready(function () {
   const apiRootURL = 'https://rel.ink';
   const $search = $('#search');
+  const $submitBtn = $('#submitBtn');
 
-  // TODO:
-  // 1. prevent user from adding multiple links by clicking fast on "shorten it" button
-  // 2. clear link input field when link is successfuly shortened 
-  $('#submitBtn').click(function (e) {
+  $submitBtn.click(function (e) {
     e.preventDefault();
 
     checkSearchEmpty();
     checkUrlValid();
 
     if (validation.$validUrl && validation.$searchVal) {
+      $submitBtn.attr('disabled', true);
       $.ajax({
         method: 'POST',
         url: 'https://rel.ink/api/links/',
@@ -22,9 +21,12 @@ $(document).ready(function () {
       })
         .done((data) => {
           addLinks(data.url, data.hashid);
-
+          clearInputField();
+          $submitBtn.attr('disabled', false);
+        })
+        .fail(() => {
+          showAlert();
         });
-
     }
   });
 
@@ -39,6 +41,7 @@ $(document).ready(function () {
     if ($search.val() === '' || $search.val() === null) {
       $search.addClass('is-invalid');
       validation.$searchVal = false;
+      clearInputField();
       return;
     }
     validation.$searchVal = true;
@@ -48,19 +51,17 @@ $(document).ready(function () {
     if (!$search.val().startsWith('https://') && !$search.val().startsWith('http://')) {
       $search.addClass('is-invalid');
       validation.$validUrl = false;
+      clearInputField();
       return;
     }
     validation.$validUrl = true;
   }
 
-  $search.click(removeInvalidClass);
-
-  function removeInvalidClass() {
+  $search.click(() => {
     if ($search.hasClass('is-invalid')) {
       $search.removeClass('is-invalid');
     }
-  }
-
+  });
 
   function addLinks(link, shortLinkHash) {
     const $template = $('.template');
@@ -88,34 +89,19 @@ $(document).ready(function () {
       });
       $(this).addClass('url-shorten-template__btn--copied').text('Copied');
     });
-
   }
 
-  // TD: Copy short link to clipboard on button click, using Clipboard API Clipboard.writeText()
-  //BUG: Link is copied just for the first displayed shortened link, next doesn't work
-
-  // function copyToClipboard(element, button) {
-  //   $(button).click(function () {
-  //     navigator.clipboard.writeText($(element).html());
-  //     switchBtnClass($(button));
-  //   });
-  // }
-
-  //TD: Copy short link to clipboard on button click, using document.execCommand('copy')
-  //BUG: Link is copied just for the first displayed shortened link, next doesn't work
-
-  function copyToClipboard(shortLink) {
-    const $tempElement = $('<input type="hidden">').val(shortLink).appendTo('body').select();
-    document.execCommand('copy');
-    $tempElement.remove();
-
-    let cbData = event.clipboardData || window.clipboardData || event.originalEvent.clipboardData;
-    cbData.setData('textr/html', shortLink);
-    console.log(cbData);
+  function showAlert() {
+    $('.alert').addClass('alert--show');
+    $('.close').click(() => {
+      $('.alert').removeClass('alert--show');
+    });
   }
 
-  // function switchBtnClass(element) {
-  //   $(element).addClass('url-shorten-template__btn--copied').text('copied');
-  // }
+  function clearInputField() {
+    if (validation.$validUrl || validation.$searchVal) {
+      $search.val('');
+    }
+  }
 
 });
