@@ -22,10 +22,10 @@ $(document).ready(function () {
         .done((data) => {
           addLinks(data.url, data.hashid);
           clearInputField();
-          $submitBtn.attr('disabled', false);
+          $submitBtn.removeAttr('disabled', true);
         })
         .fail(() => {
-          showAlert();
+          handleAlert();
         });
     }
   });
@@ -91,10 +91,11 @@ $(document).ready(function () {
     });
   }
 
-  function showAlert() {
-    $('.alert').addClass('alert--show');
+  function handleAlert() {
+    $('.alert').fadeIn();
+
     $('.close').click(() => {
-      $('.alert').removeClass('alert--show');
+      $('.alert').fadeOut();
     });
   }
 
