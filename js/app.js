@@ -25,7 +25,7 @@ $(document).ready(function () {
           $submitBtn.removeAttr('disabled', true);
         })
         .fail(() => {
-          handleAlert();
+          showNotification();
         });
     }
   });
@@ -91,12 +91,20 @@ $(document).ready(function () {
     });
   }
 
-  function handleAlert() {
-    $('.alert').fadeIn();
+  function showNotification() {
+    $('body').append(`
+      <div class="alert" role="alert">
+       <div class="alert__header">&#9888;</div>
+       <div class="alert__body">
+         <h4><strong>Warning!</strong></h4>
+          An error has occured, please try again.
+       </div>
+      </div>
+    `).fadeIn();
 
-    $('.close').click(() => {
+    setTimeout(() => {
       $('.alert').fadeOut();
-    });
+    }, 2000);
   }
 
   function clearInputField() {

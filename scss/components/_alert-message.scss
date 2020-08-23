@@ -1,26 +1,21 @@
 .alert {
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    position: fixed;
+    @include all-centered;
     z-index: 1;
     border-radius: 0.25rem;
     box-shadow: 0.0625rem 0.0625rem 0.875rem 0rem #292626c9;
     overflow: hidden;
-    font-size: 0.9rem;
-    text-align: left;
+    text-align: center;
+    background: white;
 
     &__header {
-        padding: 0.5rem;
-        background: hsl(0, 87%, 67%);
+        font-size: 3rem;
+        background: $red;
         color: white;
     }
 
     &__body {
-        padding: 0.5rem;
-        background: white;
-        color: hsl(0, 87%, 67%);
+        padding: 1rem;
+        color: $dark-violet;
     }
 }

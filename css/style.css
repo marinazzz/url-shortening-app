@@ -9288,28 +9288,26 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .alert {
-  display: none;
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
-  margin-right: -50%;
   transform: translate(-50%, -50%);
+  margin-right: -50%;
   z-index: 1;
   border-radius: 0.25rem;
   box-shadow: 0.0625rem 0.0625rem 0.875rem 0rem #292626c9;
   overflow: hidden;
-  font-size: 0.9rem;
-  text-align: left;
+  text-align: center;
+  background: white;
 }
 .alert__header {
-  padding: 0.5rem;
+  font-size: 3rem;
   background: #f46262;
   color: white;
 }
 .alert__body {
-  padding: 0.5rem;
-  background: white;
-  color: #f46262;
+  padding: 1rem;
+  color: #3b3054;
 }
 
 @media (max-width: 767.98px) {

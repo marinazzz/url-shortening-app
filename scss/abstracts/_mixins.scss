@@ -16,3 +16,10 @@
     top: 0;
     transform: translate(-50%, -50%);
 }
+
+@mixin all-centered {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-right: -50%;
+}
