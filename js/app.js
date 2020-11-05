@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  const apiRootURL = 'https://rel.ink';
   const $search = $('#search');
   const $submitBtn = $('#submitBtn');
 
@@ -13,14 +12,14 @@ $(document).ready(function () {
       $submitBtn.attr('disabled', true);
       $.ajax({
         method: 'POST',
-        url: 'https://rel.ink/api/links/',
+        url: 'https://api.shrtco.de/v2/shorten?url=',
         data: {
           url: $search.val().trim()
         },
         dataType: "json"
       })
         .done((data) => {
-          addLinks(data.url, data.hashid);
+          addLinks(data.result.original_link, data.result.full_short_link);
           clearInputField();
           $submitBtn.removeAttr('disabled', true);
         })
@@ -63,9 +62,8 @@ $(document).ready(function () {
     }
   });
 
-  function addLinks(link, shortLinkHash) {
+  function addLinks(link, shortLink) {
     const $template = $('.template');
-    const shortLink = apiRootURL + '/' + shortLinkHash;
     $template.append(`
       <div class="url-shorten-template">
         <div class="url-shorten-template__col link-col">
